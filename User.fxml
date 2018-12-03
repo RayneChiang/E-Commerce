@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="basePane" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UserController">
+   <children>
+      <GridPane layoutX="-6.0" prefHeight="500.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="242.0" minWidth="10.0" prefWidth="135.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="255.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="151.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="160.0" minHeight="10.0" prefHeight="86.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="297.0" minHeight="10.0" prefHeight="261.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="284.0" minHeight="10.0" prefHeight="152.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="labelTitle" text="Welcome" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Lucida Grande" size="34.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="177.0" prefWidth="376.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <ComboBox fx:id="chooseCat" onAction="#setSub" prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="chooseSub" onAction="#setName" prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="chooseName" onAction="#getPrice" prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <Label fx:id="numberPrice" prefHeight="17.0" prefWidth="41.0" text="0">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Button fx:id="buttonWant" mnemonicParsing="false" onAction="#want" prefHeight="32.0" prefWidth="141.0" text="WANT">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox prefHeight="187.0" prefWidth="135.0" spacing="30.0" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="labelCat" text="Category">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="labelSub" text="SubCategory">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="labelName" text="Name">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="labelPrice" text="Price">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="labelshopping" prefHeight="39.0" prefWidth="101.0" text="Shopping" />
+                  <ListView fx:id="shoppingCart" prefHeight="210.0" prefWidth="138.0" />
+                  <Label fx:id="labelSum" text="0" />
+               </children>
+            </VBox>
+            <Button fx:id="buttonBack" mnemonicParsing="false" onAction="#back" text="backToLogin" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button fx:id="buttonDisplay" mnemonicParsing="false" onAction="#display" prefHeight="27.0" prefWidth="124.0" text="ProductList" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

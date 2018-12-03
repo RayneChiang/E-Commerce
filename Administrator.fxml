@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="basePane" prefHeight="422.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdministratorController">
+   <children>
+      <GridPane cacheShape="false" prefHeight="422.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="246.0" minWidth="10.0" prefWidth="90.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="404.0" minWidth="10.0" prefWidth="218.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="404.0" minWidth="10.0" prefWidth="209.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="136.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="315.0" minHeight="10.0" prefHeight="276.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="168.0" minHeight="10.0" prefHeight="87.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <ComboBox fx:id="chooseCategory" onAction="#subAdd" prefWidth="150.0" promptText="select">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="chooseSub" prefWidth="150.0" promptText="select">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <TextField fx:id="textName" prefHeight="27.0" prefWidth="170.0">
+                     <VBox.margin>
+                        <Insets left="10.0" right="20.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="textPrice" prefHeight="30.0" prefWidth="320.0">
+                     <VBox.margin>
+                        <Insets left="10.0" right="20.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="textStorage" prefHeight="30.0" prefWidth="320.0">
+                     <VBox.margin>
+                        <Insets left="10.0" right="20.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#add" prefHeight="35.0" prefWidth="100.0" text="add" />
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </VBox>
+            <VBox prefHeight="297.0" prefWidth="98.0" spacing="8.0" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="labelCategory" prefHeight="30.0" prefWidth="80.0" text="Category">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="labelSub" prefHeight="30.0" prefWidth="70.0" text="Sub">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="labelName" prefHeight="30.0" prefWidth="70.0" text="name">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="labelPrice" prefHeight="30.0" prefWidth="70.0" text="Price">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="labelStorage" text="Storage">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <Label fx:id="labelTitle" prefHeight="33.0" prefWidth="232.0" text="Administrator" GridPane.columnIndex="1">
+               <font>
+                  <Font name="AdobeHebrew-Bold" size="27.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonDisplay" mnemonicParsing="false" onAction="#show" prefHeight="27.0" prefWidth="153.0" text="displayProduct" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="60.0" left="20.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="buttonUser" mnemonicParsing="false" onAction="#showUser" prefHeight="27.0" prefWidth="154.0" text="displayUser" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="20.0" top="50.0" />
+               </GridPane.margin>
+            </Button>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="labelChangeName" text="name">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="changeName" prefHeight="0.0" prefWidth="204.0">
+                     <VBox.margin>
+                        <Insets left="10.0" right="30.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button fx:id="buttonDelete" mnemonicParsing="false" onAction="#delete" prefHeight="27.0" prefWidth="105.0" text="delete">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label text="#enter Name for delete">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="buttonUpdate" mnemonicParsing="false" onAction="#update" text="storeUpdate">
+                     <graphic>
+                        <TextField fx:id="textUpdate" prefHeight="27.0" prefWidth="84.0" />
+                     </graphic>
+                  </Button>
+                  <Label prefHeight="31.0" prefWidth="214.0" text="#enter both name and number for Update">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Button fx:id="buttonBack" mnemonicParsing="false" onAction="#back" text="backToLogin" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets right="20.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
